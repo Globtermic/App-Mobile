@@ -1,32 +1,30 @@
-import { PageStyle } from '../Styles';
-import {Box, Heading, VStack, FormControl, Button, Input, NativeBaseProvider, Center, Bottom, Stack} from 'native-base';
-import {View, Text, Image, ImageBackground} from 'react-native';
+import {Box, Heading, VStack, Button,  NativeBaseProvider, Center, Stack} from 'native-base';
+import {View, Image, ImageBackground} from 'react-native';
 import { useContext} from 'react';
 import { Context } from '../Token';
 import { TextInput } from '../Components/TextInput';
 
 function RegisterBox() {
     const {token, setToken} = useContext(Context);
-    return  <View style={{position:"absolute", bottom:0, width:"100%"}} >
-    <Box safeArea p="6" w="100%" position="relative" bgColor="#558F36" borderTopRadius={30}>
+    return  <View style={{position: "absolute", bottom:5, width:"100%"}}>
+    <Box safeArea p="6" w="100%" position="relative" bgColor="white" borderTopRadius={30}>
         <Center>
-        <Heading size="lg" color="white"  _dark={{
+        <Heading size="lg" color="#193E05"  _dark={{
         color: "white"
         }} fontWeight="medium">
-            Welcome
+            Welcome Back
         </Heading>
         </Center>
         <Center>
-        <Heading mt="1" color="white" _dark={{
+        <Heading mt="1" color="#193E05" _dark={{
         color: "warmGray.200"
         }} fontWeight="light" size="xs">
-            Sign up to continue!
+            Sign in to continue!
         </Heading>
         </Center>
         <VStack space={3} mt="5">
-        <TextInput name="Email" textColor="white"/>
-        <TextInput name="Password" textColor="white" type="password"/>
-        <TextInput name="Confirm Password" textColor="white" type="password"/>
+        <TextInput name="Email" textColor="#193E05"/>
+        <TextInput name="Password" textColor="#193E05" type="password"/>
         <View>
         <Stack direction="row" alignItems="center" flex={1}space={10} mx={{
         base: "auto",
@@ -40,15 +38,15 @@ function RegisterBox() {
             </Button>
         </Stack>
         </View>
-        <Button bgColor='transparent' borderColor='white' borderWidth={2}
+        <Button bgColor='transparent' borderColor='#193E05' borderWidth={2}
                 onPress={() => {setToken("TEST")}}
                 borderRadius={30}
                 _text={{
-                    color: "white",
+                    color: "#193E05",
                     bold: true
                 }}
                 >
-                    REGISTER
+                    LOGIN
             </Button>
         </VStack>
     </Box>
