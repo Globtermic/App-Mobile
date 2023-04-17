@@ -1,10 +1,17 @@
 import { Button, StyleSheet, Text, View, useColorScheme } from 'react-native';
 import { Context } from './Token';
 import { useState } from 'react';
+import SignupPage from './Pages/Signuppage';
 
 import MPages from './MPages';
 import Loginpage from './Pages/Loginpage';
 
+function NextPage({token}) {
+    if (token === 'SIGNUP') {
+      return <SignupPage/>
+    }
+    return <MPages/>
+}
   
 export default function App() {
   
@@ -12,7 +19,7 @@ export default function App() {
   const [token, setToken] = useState("");
 
   return (<Context.Provider value ={{token, setToken}}>
-    {token?  <MPages/> :<Loginpage/>}
+    {token? <NextPage token={token}/> :<Loginpage/>}
     </Context.Provider>
     );
 }

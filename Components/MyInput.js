@@ -1,7 +1,7 @@
 import { FormControl, Input } from 'native-base'
 import { Text } from 'react-native';
 
-export function TextInput({name, textColor, type}) {
+export function MyInput({name, textColor, type}) {
     return <FormControl>
     <FormControl.Label>
             <Text style={{color: textColor}}>

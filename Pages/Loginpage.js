@@ -2,7 +2,7 @@ import {Box, Heading, VStack, Button,  NativeBaseProvider, Center, Stack} from '
 import {View, Image, ImageBackground} from 'react-native';
 import { useContext} from 'react';
 import { Context } from '../Token';
-import { TextInput } from '../Components/TextInput';
+import { MyInput } from '../Components/MyInput';
 
 function RegisterBox() {
     const {token, setToken} = useContext(Context);
@@ -23,8 +23,8 @@ function RegisterBox() {
         </Heading>
         </Center>
         <VStack space={3} mt="5">
-        <TextInput name="Email" textColor="#193E05"/>
-        <TextInput name="Password" textColor="#193E05" type="password"/>
+        <MyInput name="Email" textColor="#193E05"/>
+        <MyInput name="Password" textColor="#193E05" type="password"/>
         <View>
         <Stack direction="row" alignItems="center" flex={1}space={10} mx={{
         base: "auto",
@@ -49,6 +49,24 @@ function RegisterBox() {
                     LOGIN
             </Button>
         </VStack>
+        <Center>
+        <View style={{height: 15}}>
+
+        </View>
+        
+        <Heading mt="1" color="#193E05" _dark={{
+        color: "warmGray.200"
+        }} fontWeight="light" size="xs">
+            You don't have an account ?
+        </Heading>
+        <Button bgColor="white" onPress={() => {setToken("SIGNUP")}}>
+        <Heading mt="1" color="#193E05" _dark={{
+        color: "warmGray.200"
+        }} fontWeight="bold" size="xs" underline="true">
+            Sign up
+        </Heading>
+        </Button>
+        </Center>
     </Box>
     </View>;
 }
