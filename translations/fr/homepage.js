@@ -1,3 +1,3 @@
 export default {
-    bienvenue: 'Bienvenue sur l\'application globtermic!'
+    bienvenue: 'Bienvenue sur l\'application Globtermic!'
 }

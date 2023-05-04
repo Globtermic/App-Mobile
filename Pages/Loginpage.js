@@ -26,7 +26,7 @@ function RegisterBox() {
         </Center>
         <VStack space={3} mt="5">
         <MyInput name="Email" textColor="#193E05"/>
-        <MyInput name="Password" textColor="#193E05" type="password"/>
+        <MyInput name={t('loginpage:password')} textColor="#193E05" type="password"/>
         <View>
         <Stack direction="row" alignItems="center" flex={1}space={10} mx={{
         base: "auto",
