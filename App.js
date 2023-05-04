@@ -5,6 +5,8 @@ import SignupPage from './Pages/Signuppage';
 
 import MPages from './MPages';
 import Loginpage from './Pages/Loginpage';
+import './IMLocalize';
+
 
 function NextPage({token}) {
     if (token === 'SIGNUP') {
