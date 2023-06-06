@@ -16,7 +16,7 @@ export default function HomePage ({navigation}) {
             <Button
             color= 'black'
             title='Go Back'
-            onPress={() => setToken("")}
+            onPress={() => setToken("LOGIN")}
             /*onPress={() =>
                 navigation.navigate('Profile', {name: 'Jane'})}*/
             />

@@ -84,7 +84,7 @@ export default function SignupPage() {
         </FormControl>
         <View height={15}/>
         <Button bgColor='transparent' borderColor='#193E05' borderWidth={2}
-                onPress={() => {setToken("TEST")}}
+                onPress={() => {setToken("IN")}}
                 borderRadius={30}
                 _text={{
                     color: "#193E05",
@@ -100,7 +100,7 @@ export default function SignupPage() {
         }} fontWeight="light" size="xs">
             You already have an account ?
         </Heading>
-        <Button bgColor="white" onPress={() => {setToken("")}}>
+        <Button bgColor="white" onPress={() => {setToken("LOGIN")}}>
         <Heading mt="1" color="#193E05" _dark={{
         color: "warmGray.200"
         }} fontWeight="bold" size="xs" underline="true">

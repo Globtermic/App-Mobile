@@ -1,6 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { Button, Row} from 'native-base';
+import { Image } from 'react-native';
+import { Context } from '../Token';
+import { useContext } from 'react';
 
 const LANGUAGES = [
     { code: 'en', label: 'English' },
@@ -8,37 +12,31 @@ const LANGUAGES = [
     { code: 'es', label: 'Espagnol' }
   ];
 
-  const Selector = () => {
+  function Selector({key}) {
     const { i18n } = useTranslation();
     const selectedLanguageCode = i18n.language;
+    const {token, setToken} = useContext(Context);
   
     const setLanguage = code => {
+      if (token === "") {
+        setToken("LOGIN");
+      }
       return i18n.changeLanguage(code);
     };
   
     return (
       <View style={styles.container}>
-        <View style={styles.row}>
-          <Text style={styles.title}>Select a Language</Text>
-        </View>
-        {LANGUAGES.map(language => {
-          const selectedLanguage = language.code === selectedLanguageCode;
-  
-          return (
-            <Pressable
-              key={language.code}
-              style={styles.buttonContainer}
-              disabled={selectedLanguage}
-              onPress={() => setLanguage(language.code)}
-            >
-              <Text
-                style={[selectedLanguage ? styles.selectedText : styles.text]}
-              >
-                {language.label}
-              </Text>
-            </Pressable>
-          );
-        })}
+        <Row>
+        <Button bgColor='white' onPress={() => setLanguage('fr')}>
+          <Image source={require('../assets/Flags/France.png')} style={{ resizeMode: 'center', width: 40, height: 40}}></Image>
+        </Button>
+        <Button bgColor='white' onPress={() => setLanguage('en')}>
+          <Image source={require('../assets/Flags/Uk.png')} style={{ resizeMode: 'center', width: 40, height: 40}}></Image>
+        </Button>
+        <Button bgColor='white' onPress={() => setLanguage('es')}>
+          <Image source={require('../assets/Flags/Spain.png')} style={{ resizeMode: 'center', width: 40, height: 40}}></Image>
+        </Button>
+        </Row>
       </View>
     );
   };
