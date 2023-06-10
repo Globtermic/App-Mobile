@@ -1,5 +1,5 @@
 export default {
-    welcomeback: 'Bon Retour',
+    welcomeback: 'Content de vous revoir',
     signinto: 'Connectez vous pour continuer',
     login: 'Connexion',
     account: 'Vous n\'avez pas de compte ?',

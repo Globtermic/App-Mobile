@@ -3,6 +3,7 @@ import { initReactI18next } from 'react-i18next';
 import en from './translations/en'
 import fr from './translations/fr'
 import es from './translations/es'
+import * as Localisation from 'expo-localization'
 
 const LANGUAGES = {
     en,
@@ -24,3 +25,4 @@ const LANGUAGES = {
       escapeValue: false
     }
   });
+  i18next.changeLanguage(Localisation.getLocales()[0].languageCode);
