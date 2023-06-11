@@ -13,7 +13,9 @@ const LANGUAGES = {
 
 var currentLang = Localisation.getLocales()[0].languageCode;
 
-if (currentLang !== 'en' || currentLang !== 'fr' || currentLang !== 'es') {
+console.log(currentLang);
+
+if (currentLang !== 'en' && currentLang !== 'fr' && currentLang !== 'es') {
   currentLang = 'en';
 }
 
