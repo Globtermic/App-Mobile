@@ -11,6 +11,12 @@ const LANGUAGES = {
     es
 }
 
+var currentLang = Localisation.getLocales()[0].languageCode;
+
+if (currentLang !== 'en' || currentLang !== 'fr' || currentLang !== 'es') {
+  currentLang = 'en';
+}
+
   i18next
   // pass the i18n instance to react-i18next.
   .use(initReactI18next)
@@ -25,4 +31,4 @@ const LANGUAGES = {
       escapeValue: false
     }
   });
-  i18next.changeLanguage(Localisation.getLocales()[0].languageCode);
+  i18next.changeLanguage(currentLang);
