@@ -1,5 +1,6 @@
 export default {
     houses: "Maisons",
-    extentions: "Extensions",
-    offices: "Bureaux"
+    extensions: "Extensions",
+    offices: "Bureaux",
+    goBack:"retour"
 }

@@ -17,8 +17,6 @@ export default function HomePage ({navigation}) {
             color= 'black'
             title='Go Back'
             onPress={() => setToken("LOGIN")}
-            /*onPress={() =>
-                navigation.navigate('Profile', {name: 'Jane'})}*/
             />
         </View>
     )

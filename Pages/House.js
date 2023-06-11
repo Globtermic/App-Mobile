@@ -1,17 +1,40 @@
-import { Dimensions, Text, TouchableOpacity, ImageBackground } from 'react-native';
-import {Box, Center, Button, Image, ScrollView, NativeBaseProvider, View} from 'native-base';
+import { Dimensions, Text, TouchableOpacity, ImageBackground, Button} from 'react-native';
+import {Box,ScrollView, NativeBaseProvider, View} from 'native-base';
 import { PageStyle } from '../Styles';
-import ImageViewer from 'react-native-image-zoom-viewer';
 import { useTranslation } from 'react-i18next';
+import { useContext, useState, createContext } from 'react';
 
-const images = [{
-    url: '',
-    props: {
-        source: require('../assets/Escencia/vue3.jpg')
-    }
-}]
+const HouseContext = createContext(null);
 
-export default function Houses ({navigation}) {
+function HousesHousesPage () {
+    const {t, i18n} = useTranslation();
+    const {houseToken, sethouseToken} = useContext(HouseContext);
+    return <View style = {{alignItems:"center", justifyContent:"center", flex:1}}>
+        <Text>{t('house:houses')}</Text>
+        <Button color= 'black' title={t('house:goBack')} onPress={() => sethouseToken("MAIN")} />
+    </View>
+}
+
+function HousesExtensionsPage () {
+    const {t, i18n} = useTranslation();
+    const {houseToken, sethouseToken} = useContext(HouseContext);
+    return <View style = {{alignItems:"center", justifyContent:"center", flex:1}}>
+        <Text>{t('house:extensions')}</Text>
+        <Button color= 'black' title={t('house:goBack')} onPress={() => sethouseToken("MAIN")} />
+    </View>
+}
+
+function HousesOfficesPage () {
+    const {t, i18n} = useTranslation();
+    const {houseToken, sethouseToken} = useContext(HouseContext);
+    return <View style = {{alignItems:"center", justifyContent:"center", flex:1}}>
+        <Text>{t('house:offices')}</Text>
+        <Button color= 'black' title={t('house:goBack')} onPress={() => sethouseToken("MAIN")} />
+    </View>
+}
+
+function HousesMainPage () {
+    const {houseToken, sethouseToken} = useContext(HouseContext);
     const deviceHeight = Dimensions.get("screen").height;
     const deviceWidth = Dimensions.get("screen").width;
     const divHeight = deviceHeight / 4;
@@ -21,19 +44,43 @@ export default function Houses ({navigation}) {
         <NativeBaseProvider>
         <ScrollView>
         <Box alignItems="center" safeAreaTop p="4" justifyContent="center" >
-            <TouchableOpacity  >
-                <ImageBackground source={require('../assets/Escencia/vue3.jpg')} borderRadius={15} blurRadius={5} style={{ width:deviceWidth, height:divHeight, justifyContent:'center', alignItems:'center'}} >
-                    <Text style={{color:"white"}}>{t('house:houses')}</Text>
+            <TouchableOpacity onPress={()=> {sethouseToken("HOUSES")}} >
+                <ImageBackground source={require('../assets/Escencia/portrait1.jpg')} borderRadius={15} blurRadius={5} style={{ width:deviceWidth - 10, height:divHeight, justifyContent:'center', alignItems:'center', marginBottom: 20}} >
+                    <Text style={{color:"white", fontSize:30}}>{t('house:houses')}</Text>
                 </ImageBackground>
             </TouchableOpacity>
-             {/* <Button bgColor="transparent" onPress={() => {}} style={{justifyContent:'center'}} >
-                <Box>
-                <Image source={require('../assets/Escencia/vue3.jpg')} borderRadius={15} alt='alignItems' size="2xl" width={deviceWidth} height={deviceHeight / 4} blurRadius={5} />
-                <Text>{t('house:houses')}</Text>
-                </Box>
-            </Button> */}
+            <TouchableOpacity onPress={()=> {sethouseToken("EXTENSIONS")}} >
+                <ImageBackground source={require('../assets/Escencia/portrait1.jpg')} borderRadius={15} blurRadius={5} style={{ width:deviceWidth - 10, height:divHeight, justifyContent:'center', alignItems:'center', marginBottom: 20}} >
+                    <Text style={{color:"white", fontSize:30}}>{t('house:extensions')}</Text>
+                </ImageBackground>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=> {sethouseToken("OFFICES")}} >
+                <ImageBackground source={require('../assets/Escencia/portrait1.jpg')} borderRadius={15} blurRadius={5} style={{ width:deviceWidth - 10, height:divHeight, justifyContent:'center', alignItems:'center', marginBottom: 20}} >
+                    <Text style={{color:"white", fontSize:30}}>{t('house:offices')}</Text>
+                </ImageBackground>
+            </TouchableOpacity>
             </Box>
             </ScrollView>
             </NativeBaseProvider>
     )
+}
+
+function PageChoice ({houseToken}) {
+    if (houseToken === "MAIN") {
+        return < HousesMainPage/>
+    }
+    else if (houseToken === "HOUSES") {
+        return <HousesHousesPage/>
+    }
+    else if (houseToken === "EXTENSIONS") {
+        return <HousesExtensionsPage/>
+    }
+    return <HousesOfficesPage />
+}
+
+export default function Houses ({navigation}) {
+    const [houseToken, sethouseToken] = useState("MAIN");
+    return <HouseContext.Provider value ={{houseToken, sethouseToken}}>
+        <PageChoice houseToken={houseToken}/>
+    </HouseContext.Provider>
 }

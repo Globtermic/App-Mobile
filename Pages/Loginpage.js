@@ -14,7 +14,7 @@ function RegisterBox() {
         <Heading size="lg" color="#193E05"  _dark={{
         color: "white"
         }} fontWeight="medium">
-            {t('loginpage:welcomeback')}
+            {t('loginpage:welcomeback')}!
         </Heading>
         </Center>
         <Center>
