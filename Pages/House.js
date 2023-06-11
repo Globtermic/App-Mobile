@@ -42,7 +42,6 @@ function HousesMainPage () {
 
     return (
         <NativeBaseProvider>
-        <ScrollView>
         <Box alignItems="center" safeAreaTop p="4" justifyContent="center" >
             <TouchableOpacity onPress={()=> {sethouseToken("HOUSES")}} >
                 <ImageBackground source={require('../assets/Escencia/portrait1.jpg')} borderRadius={15} blurRadius={5} style={{ width:deviceWidth - 10, height:divHeight, justifyContent:'center', alignItems:'center', marginBottom: 20}} >
@@ -60,7 +59,6 @@ function HousesMainPage () {
                 </ImageBackground>
             </TouchableOpacity>
             </Box>
-            </ScrollView>
             </NativeBaseProvider>
     )
 }

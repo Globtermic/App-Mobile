@@ -3,10 +3,12 @@ import { ScrollView, Text} from "react-native";
 import { Context } from "../Token";
 import { MyInput } from '../Components/MyInput';
 import { useContext, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function SignupPage() {
     const {token, setToken} = useContext(Context);
     const [bday, setBday] = useState("");
+    const {t, i18n} = useTranslation();
     return <NativeBaseProvider>
         <ScrollView>
             <Box safeArea p="6" w="100%" position="relative" bgColor="white">
@@ -14,20 +16,20 @@ export default function SignupPage() {
         <Heading size="lg" color="#193E05"  _dark={{
         color: "white"
         }} fontWeight="medium">
-            Welcome
+            {t('signuppage:welcome')}
         </Heading>
         </Center>
         <Center>
         <Heading mt="1" color="#193E05" _dark={{
         color: "warmGray.200"
         }} fontWeight="light" size="xs">
-            Sign in to continue!
+            {t('signuppage:signupto')}
         </Heading>
         </Center>
         <FormControl>
             <FormControl.Label isRequired="true">
                 <Text style={{color: "#193E05"}}>
-                Full Name
+                {t('signuppage:fullName')}
                 </Text>
             </FormControl.Label>
             <Input borderRadius={15} placeholder="Enter name"/>
@@ -35,7 +37,7 @@ export default function SignupPage() {
         <FormControl>
             <FormControl.Label isRequired="true">
                 <Text style={{color: "#193E05"}}>
-                Email
+                {t('signuppage:email')}
                 </Text>
             </FormControl.Label>
             <Input borderWidth={1} borderRadius={15} placeholder="example@gmail.com"/>
@@ -43,7 +45,7 @@ export default function SignupPage() {
         <FormControl>
             <FormControl.Label isRequired="true">
                 <Text style={{color: "#193E05"}}>
-                Date of birth
+                {t('signuppage:datebirth')}
                 </Text>
             </FormControl.Label>
             <Input borderWidth={1} 
@@ -53,7 +55,7 @@ export default function SignupPage() {
         <FormControl>
             <FormControl.Label isRequired="true">
                 <Text style={{color: "#193E05"}}>
-                Civility
+                {t('signuppage:civility')}
                 </Text>
             </FormControl.Label>
             <Input borderWidth={1} borderRadius={15} placeholder="Enter civility"/>
@@ -61,7 +63,7 @@ export default function SignupPage() {
         <FormControl>
             <FormControl.Label isRequired="true">
                 <Text style={{color: "#193E05"}}>
-                Phone number
+                {t('signuppage:phoneNumber')}
                 </Text>
             </FormControl.Label>
             <Input borderWidth={1} borderRadius={15} placeholder="+33 1 23 45 67 89" inputMode="tel"/>
@@ -69,7 +71,7 @@ export default function SignupPage() {
         <FormControl>
             <FormControl.Label isRequired="true">
                 <Text style={{color: "#193E05"}}>
-                Password
+                {t('signuppage:password')}
                 </Text>
             </FormControl.Label>
             <Input borderWidth={1} borderRadius={15} placeholder="Enter password"/>
@@ -77,7 +79,7 @@ export default function SignupPage() {
         <FormControl>
             <FormControl.Label isRequired="true">
                 <Text style={{color: "#193E05"}}>
-                Confirm Password
+                {t('signuppage:confirmPassword')}
                 </Text>
             </FormControl.Label>
             <Input borderWidth={1} borderRadius={15} placeholder="Confirm password"/>
@@ -91,20 +93,20 @@ export default function SignupPage() {
                     bold: true
                 }}
                 >
-                    SIGN UP
+                    {t('signuppage:signUp')}
             </Button>
         <View height={15}/>
         <Center>
         <Heading mt="1" color="#193E05" _dark={{
         color: "warmGray.200"
         }} fontWeight="light" size="xs">
-            You already have an account ?
+            {t('signuppage:alreadyAccount')}?
         </Heading>
         <Button bgColor="white" onPress={() => {setToken("LOGIN")}}>
         <Heading mt="1" color="#193E05" _dark={{
         color: "warmGray.200"
         }} fontWeight="bold" size="xs" underline="true">
-            Sign in
+            {t('signuppage:signIn')}
         </Heading>
         </Button>
         </Center>
