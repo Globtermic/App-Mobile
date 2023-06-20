@@ -32,7 +32,7 @@ export default function SignupPage() {
                 {t('signuppage:fullName')}
                 </Text>
             </FormControl.Label>
-            <Input borderRadius={15} placeholder="Enter name"/>
+            <Input borderRadius={15} placeholder="Jean Dupont"/>
         </FormControl>
         <FormControl>
             <FormControl.Label isRequired="true">
@@ -74,7 +74,7 @@ export default function SignupPage() {
                 {t('signuppage:password')}
                 </Text>
             </FormControl.Label>
-            <Input borderWidth={1} borderRadius={15} placeholder="Enter password"/>
+            <Input borderWidth={1} borderRadius={15} placeholder={t('signuppage:password')}/>
         </FormControl>
         <FormControl>
             <FormControl.Label isRequired="true">
@@ -82,7 +82,7 @@ export default function SignupPage() {
                 {t('signuppage:confirmPassword')}
                 </Text>
             </FormControl.Label>
-            <Input borderWidth={1} borderRadius={15} placeholder="Confirm password"/>
+            <Input borderWidth={1} borderRadius={15} placeholder={t('signuppage:confirmPassword')}/>
         </FormControl>
         <View height={15}/>
         <Button bgColor='transparent' borderColor='#193E05' borderWidth={2}

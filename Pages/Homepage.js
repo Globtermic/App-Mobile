@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import Selector from '../Components/LanguageSelector';
 import { Box, IconButton, Icon, Button } from 'native-base';
 import { Ionicons } from '@expo/vector-icons';
+import Settings from './Settings';
 
 export default function HomePage ({navigation}) {
     const {token, setToken} = useContext(Context);

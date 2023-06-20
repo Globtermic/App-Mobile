@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 function RegisterBox() {
     const {token, setToken} = useContext(Context);
     const {t, i18n} = useTranslation();
-    return  <View style={{position: "absolute", bottom:5, width:"100%"}}>
+    return  <View style={{position: "absolute", bottom:0, width:"100%"}}>
     <Box safeArea p="6" w="100%" position="relative" bgColor="white" borderTopRadius={30}>
         <Center>
         <Heading size="lg" color="#193E05"  _dark={{
