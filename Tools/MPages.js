@@ -1,11 +1,11 @@
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { NativeBaseProvider} from 'native-base';
-import HomePage  from './Pages/Homepage';
-import Settings from './Pages/Settings';
-import News  from './Pages/News';
-import Houses from './Pages/House';
-import {NavBar} from './Components/NavBar'
+import HomePage  from '../Pages/Homepage';
+import Settings from '../Pages/Settings';
+import News  from '../Pages/News';
+import Houses from '../Pages/House';
+import {NavBar} from '../Components/NavBar'
 
 const Stack = createNativeStackNavigator();
 

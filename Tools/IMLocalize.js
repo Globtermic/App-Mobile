@@ -1,8 +1,8 @@
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import en from './translations/en'
-import fr from './translations/fr'
-import es from './translations/es'
+import en from '../translations/en'
+import fr from '../translations/fr'
+import es from '../translations/es'
 import * as Localisation from 'expo-localization'
 
 const LANGUAGES = {
