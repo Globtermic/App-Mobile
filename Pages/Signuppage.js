@@ -1,6 +1,6 @@
 import { NativeBaseProvider, Box, Center, Heading, FormControl, Input, Button, View} from "native-base";
 import { ScrollView, Text} from "react-native";
-import { Context } from "../Token";
+import { Context } from "../Tools/Token";
 import { MyInput } from '../Components/MyInput';
 import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";

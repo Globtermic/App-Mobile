@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, useColorScheme } from 'react-native';
 import { PageStyle } from '../Styles';
 import { useContext } from 'react';
-import { Context } from '../Token';
+import { Context } from '../Tools/Token';
 import { useTranslation } from 'react-i18next';
 import Selector from '../Components/LanguageSelector';
 import { Box, IconButton, Icon, Button } from 'native-base';

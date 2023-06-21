@@ -13,7 +13,7 @@ export function NavBar() {
     const [selected, setSelected] = React.useState(1);
     const {t, i18n} = useTranslation();
     return <>
-        <Box flex={0} bg="blue" safeAreaBottom width= "100%" alignSelf= 'center' marginBottom={0}>
+        <Box flex={0} bg="blue" safeAreaBottom width= "100%" alignSelf= 'center' style={{bottom:0}}>
           <HStack bg="white" alignItems="center" safeAreaBottom shadow={9} borderTopWidth={1} borderTopColor='#545454'>
           <Pressable style={NavBarStyle.pressable}
             cursor="pointer" 

@@ -1,12 +1,12 @@
 import { Button, StyleSheet, Text, View, useColorScheme } from 'react-native';
 import { NativeBaseProvider } from 'native-base';
-import { Context } from './Token';
+import { Context } from './Tools/Token';
 import { useState } from 'react';
 import SignupPage from './Pages/Signuppage';
 
-import MPages from './MPages';
+import MPages from './Tools/MPages';
 import Loginpage from './Pages/Loginpage';
-import './IMLocalize';
+import './Tools/IMLocalize';
 import Selector from './Components/LanguageSelector';
 import { useTranslation } from 'react-i18next';
 

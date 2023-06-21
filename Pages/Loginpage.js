@@ -1,7 +1,7 @@
 import {Box, Heading, VStack, Button,  NativeBaseProvider, Center, Stack} from 'native-base';
 import {View, Image, ImageBackground} from 'react-native';
 import { useContext} from 'react';
-import { Context } from '../Token';
+import { Context } from '../Tools/Token';
 import { MyInput } from '../Components/MyInput';
 import { useTranslation } from 'react-i18next';
 

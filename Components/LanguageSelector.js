@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Button, Row} from 'native-base';
 import { Image } from 'react-native';
-import { Context } from '../Token';
+import { Context } from '../Tools/Token';
 import { useContext } from 'react';
 
 const LANGUAGES = [
