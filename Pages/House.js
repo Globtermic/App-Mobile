@@ -3,80 +3,19 @@ import {Box,ScrollView, NativeBaseProvider, View, Image} from 'native-base';
 import { PageStyle } from '../Styles';
 import { useTranslation } from 'react-i18next';
 import { useContext, useState, createContext } from 'react';
-import { SliderBox } from "react-native-image-slider-box";
-import Carousel from 'react-native-snap-carousel';
-
-const SLIDER_WIDTH = Dimensions.get('window').width + 30;
-const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.8);
-
-const escenciaHouse = [
-    {
-        id: 1,
-        url: require('../assets/Escencia/vueFace.png')
-    },
-    {
-        id: 2,
-        url: require("../assets/Escencia/vueDessus.png"),
-    },
-    {
-        id: 3,
-        url: require("../assets/Escencia/vueContrePlongee.png"),
-    },
-    {
-        id: 4,
-        url: require("../assets/Escencia/vueAerienne.png"),
-    },
-    {
-        id: 5,
-        url: require("../assets/Escencia/vue3.png"),
-    },
-    {
-        id: 6,
-        url: require("../assets/Escencia/portrait2.png"),
-    },
-    {
-        id: 7,
-        url: require("../assets/Escencia/portrait1.png"),
-    },
-    {
-        id: 8,
-        url: require("../assets/Escencia/interieur2.png"),
-    },
-    {id: 9, url: require("../assets/Escencia/interieur1.png"),},
-    {id: 10, url: require("../assets/Escencia/coupeHaut.png"),}
-];
-
-const renderItem = ({item}) => {
-    return <Image
-        source= {item.url} alt="HOUSE" style={{width: 400, height: 400}}/>
-}
-
-function Gallery() {
-    return <View>
-        <Carousel
-        firstItem={1}
-        layout='tinder'
-        data={escenciaHouse} 
-        renderItem={renderItem} 
-        sliderWidth={SLIDER_WIDTH}
-        itemWidth={ITEM_WIDTH}
-        inactiveSlideShift={0}
-        useScrollView={true}
-        containerCustomStyle={{overflow:'visible'}}
-        contentContainerCustomStyle={{overflow:'visible'}}
-        />
-    </View>
-}
+import { Gallery } from '../Components/Gallery';
 
 const HouseContext = createContext(null);
 
 function HousesHousesPage () {
     const {t, i18n} = useTranslation();
     const {houseToken, sethouseToken} = useContext(HouseContext);
-    // return <View style = {{alignItems:"center", justifyContent:"center", flex:1}}>
-        return<Gallery/> //<Gallery/> {/* <Text>{t('house:houses')}</Text> */}
-        // <Button color= 'black' title={t('house:goBack')} onPress={() => sethouseToken("MAIN")} />
-    // </View>
+    return <ScrollView contentContainerStyle="center" style = {{  marginTop:30, backgroundColor:"white"}}>
+        
+        <Gallery index={0}/>
+        <Gallery index={1}/>
+        <Button color= 'black' title={t('house:goBack')} onPress={() => sethouseToken("MAIN")} />
+    </ScrollView>
 }
 
 function HousesExtensionsPage () {
@@ -91,7 +30,7 @@ function HousesExtensionsPage () {
 function HousesOfficesPage () {
     const {t, i18n} = useTranslation();
     const {houseToken, sethouseToken} = useContext(HouseContext);
-    return <View style = {{alignItems:"center", justifyContent:"center", flex:1}}>
+    return <View style = {{alignItems:"center", justifyContent:"center", flex:1, backgroundColor:"white"}}>
         <Text>{t('house:offices')}</Text>
         <Button color= 'black' title={t('house:goBack')} onPress={() => sethouseToken("MAIN")} />
     </View>
